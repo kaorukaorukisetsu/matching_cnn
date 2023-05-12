@@ -22,9 +22,9 @@ cuda = True
 weights_path = 'SuperPointPretrainedNetwork/superpoint_v1.pth'
 nms_dist = 1
 #conf_thresh = 0.00005
-conf_thresh = 0.00005
+conf_thresh = 0.005
 #conf_thresh=0.015
-nn_thresh = 0.015
+nn_thresh = 0.1
 
 
 def getPairs(img1, fe):
