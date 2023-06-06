@@ -5,7 +5,7 @@ import time
 from func2 import *
 suc_mum=0
 knn = 2
-ratio = 0.95  # 射影なら0.84
+ratio = 0.97  # 射影なら0.84
 limitpx = 3
 ransacnum = 5000
 AKAZE_th = -0.000005
@@ -19,7 +19,6 @@ rootfolder = "/home/natori21_u/JAXA_database/"
 dir_path = "512/jpg8k/"
 
 cuda = True
-weights_path = 'SuperPointPretrainedNetwork/superpoint_v1.pth'
 nms_dist = 1
 #conf_thresh = 0.00005
 conf_thresh = 0.005
@@ -49,12 +48,12 @@ def getPairs(img1, fe):
 
 
 
-noise = 400
+noise = 403
 start = time.time()
 mode = 2
 # img1_path=rootfolder+dir_path+str(noise)+"/*"
 img1_path = rootfolder + dir_path + str(noise) + "/"
-img2_path = rootfolder + "TCO_CST1_TM_SIM_a7351_i3438_h36000_lanczos3.bmp"
+img2_path = "/home/natori21_u/JAXA_database/mapimg/CST1/TCO_CST1_TM_SIM_a7351_i3438_H36.bmp"
 truepoint_path = rootfolder + dir_path + str(noise) + "/" + "true_point.csv"
 
 # imgファイルの名前読み込み
@@ -82,7 +81,8 @@ ng_lis3 = []
 
 f3 = open("s_Matching" + str(noise) + ".csv", "w")
 img2 = cv2.imread(img2_path)
-
+print(img2.shape)
+#mpt, mf = AKAZE(img2)
 mpt, sco_left, mf = cnn_feature_extract(img2,  nfeatures = -1)
 # print(mpt)  #keypoint
 #print(mf)
@@ -133,7 +133,7 @@ print(int(score / 3600), "時間", int((score % 3600) / 60), "分", score % 60, 
 
 
 
-
-
+#578
+445
 
 

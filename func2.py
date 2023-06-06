@@ -34,17 +34,17 @@ def AKAZE(img):
 
 
 def matchRatio(keyPoint1, feature1, keyPoint2, feature2, knn, ratio):
-    #matcher = cv2.BFMatcher()
-    flann = cv2.FlannBasedMatcher(index_params, search_params)
+    matcher = cv2.BFMatcher()
+    #flann = cv2.FlannBasedMatcher(index_params, search_params)
     a = None
     if type(feature2) == type(a):
         return 0, 0
 
     else:
-        #matches = matcher.knnMatch(feature1, feature2, k=knn)
+        matches = matcher.knnMatch(feature1, feature2, k=knn)
 
         #matches = matcher.knnMatch(feature1.transpose(1, 0), feature2.transpose(1, 0), k=2)
-        matches = flann.knnMatch(feature1, feature2, k=2)
+       # matches = flann.knnMatch(feature1, feature2, k=2)
 
         good = []
         img1_pt = []
