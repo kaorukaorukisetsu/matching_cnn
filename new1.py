@@ -59,7 +59,8 @@ start = time.time()
 mode = 2
 # img1_path=rootfolder+dir_path+str(noise)+"/*"
 img1_path = rootfolder + dir_path + str(noise) + "/"
-img2_path = rootfolder + "TCO_CST1_TM_SIM_a7351_i3438_h36000_lanczos3.bmp"
+#img2_path = rootfolder + "TCO_CST1_TM_SIM_a7351_i3438_h36000_lanczos3.bmp"
+img2_path = "/home/natori21_u/JAXA_database/mapimg/CST1/TCO_CST1_TM_SIM_a7351_i3438_H36.bmp"
 truepoint_path = rootfolder + dir_path + str(noise) + "/" + "true_point.csv"
 
 # imgファイルの名前読み込み
